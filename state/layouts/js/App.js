@@ -17,10 +17,10 @@ class App extends React.Component {
           <IconSwitch
             icon={this.state.cardView}
             onSwitch={() => {this.setState({
-              cardView: this.state.cardView == VIEW_LIST ? VIEW_MODULE : VIEW_LIST
+              cardView: this.state.cardView === VIEW_LIST ? VIEW_MODULE : VIEW_LIST
             }); console.log("сменился тип вывода")}} />
         </div>
-        {this.renderLayout(this.state.cardView == VIEW_MODULE)}
+        {this.renderLayout(this.state.cardView === VIEW_MODULE)}
       </div>
     );
   }
