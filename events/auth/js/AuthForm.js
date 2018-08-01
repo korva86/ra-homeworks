@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 function AuthForm (props) {
   let userName, email, pass;
   const changePass = function(e) {
