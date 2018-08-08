@@ -7,6 +7,7 @@ class SubscribeForm extends React.Component {
         email: '',
         valid: ''
       }
+      this.changeEmail = this.changeEmail.bind(this);
     }
     
     render() {
@@ -22,7 +23,7 @@ class SubscribeForm extends React.Component {
                             id="input-email" 
                             placeholder="Email"
                             value={this.state.email}
-                            onChange={this.changeEmail.bind(this)}
+                            onChange={this.changeEmail}
                         />
                         <div className="form-error">Пожалуйста, проверьте корректность адреса электронной почты</div>
                         <button type="submit" className="form-next">
@@ -33,7 +34,7 @@ class SubscribeForm extends React.Component {
             </div>
         );
     }
-    changeEmail(event) { 
+    changeEmail(event) {
         this.setState({ email: event.currentTarget.value }); 
         if (event.currentTarget.value == "") {
             this.setState({ valid: 'is-error' });
