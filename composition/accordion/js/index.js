@@ -15,7 +15,6 @@ const mainContent = [
   }
 ]
 
- 
 const Section = (props) => {
   const {sectionTitle, text} = props;
   return (
