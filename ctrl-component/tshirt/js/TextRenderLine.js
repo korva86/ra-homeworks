@@ -1,7 +1,8 @@
 const TextRenderLine = ({value, onChange}) => {
-	const handleChange = function (func, val) {
-		val = val.replace(/[^A-z\s]/g, '');
-		func(val);
+
+	const handleChange = function (e) {
+		e.currentTarget.value = e.currentTarget.value.replace(/[^A-z\s]/g, '').toLowerCase();
+		onChange(e.currentTarget.value);
 	}
 	return (
 		<div className="type-text">
@@ -11,7 +12,7 @@ const TextRenderLine = ({value, onChange}) => {
 				cols="30" rows="2" 
 				placeholder="Введите текст для футболки"
 				value={value}
-				onChange={(e) => {handleChange(onChange, e.currentTarget.value)} }
+				onChange={handleChange}
 				>
 			</textarea>
 		</div>
