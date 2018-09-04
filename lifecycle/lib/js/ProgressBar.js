@@ -42,15 +42,20 @@ class ProgressBar extends React.Component {
     this.ctx.fillText(text, centerCanvas.centerX, centerCanvas.centerY)
   }
   
+  handleResize() {
+    this.setCanvasSize(this.canvas);
+    this.drawCanvas(this.state.total, this.state.completed);
+  }
+
   componentDidMount () {
     this.canvas = document.getElementById('progressCanvas'); 
     this.setCanvasSize(this.canvas);
     this.ctx = this.canvas.getContext('2d');
     this.drawCanvas(this.state.total, this.state.completed);
-    window.addEventListener("resize", () => {
-      this.setCanvasSize(this.canvas);
-      this.drawCanvas(this.state.total, this.state.completed);
-    });
+    this.handleResize = this.handleResize.bind(this);
+    window.addEventListener("resize", 
+      this.handleResize
+    );
   }
 
   componentWillReceiveProps({total, completed}) {
@@ -65,10 +70,7 @@ class ProgressBar extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", () => {
-      this.setCanvasSize(this.canvas);
-      this.drawCanvas(this.state.total, this.state.completed);
-    });
+    window.removeEventListener("resize", this.handleResize);
   }
 
   render() {
