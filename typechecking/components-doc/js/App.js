@@ -10,7 +10,7 @@ class App extends React.Component {
       last_name: '',
       birthday: '',
       password: '',
-      sex: 'муж'
+      sex: 'Male'
     };
 
     this.onSubmit = this.onSubmit.bind(this);
