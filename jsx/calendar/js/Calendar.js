@@ -119,7 +119,6 @@ const Calendar = ({date}) => {
     
     let allDays = new Array(countWeeks).fill(null);
     allDays = allDays.map((item, index) => {
-        //console.log(date.getDate());
         const week = <Weeks month={date.getMonth()} date={new Date(firstDayCal)} day={date.getDate()} />
         firstDayCal.setDate(firstDayCal.getDate() + 7);
         return week
@@ -143,12 +142,10 @@ const Calendar = ({date}) => {
 const Weeks = ({date, month, day}) => {
     let week = new Array(7).fill(null);
     week = week.map((item, index) => {
-        //console.log(date);
         const oneDay = <Day key={index} date = {new Date(date)} month={month} day={day}/>
         date.setDate(date.getDate()+ 1);
         return oneDay
     })
-    //console.log(day);
 
     return (
         <tr>
@@ -158,7 +155,6 @@ const Weeks = ({date, month, day}) => {
 }
 
 const Day = ({date, month, day}) => {
-    //console.log(date);
     const Style = () => {
         if (date.getMonth() !== month) {
             return "ui-datepicker-other-month"
@@ -166,7 +162,6 @@ const Day = ({date, month, day}) => {
             return "ui-datepicker-today"
         } else return ""
     }
-    //console.log(Style);
     return (
         <td className = {Style()}>{date.getDate()}</td>
     )

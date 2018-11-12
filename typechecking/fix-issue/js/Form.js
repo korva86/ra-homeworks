@@ -46,7 +46,7 @@ Form.propTypes = {
   handleSubmit: PropTypes.func,
   handleChange: PropTypes.func,
 
-  email: PropTypes.string,
+  email: PropTypes.string.isRequired,
   first_name: PropTypes.string,
   last_name: PropTypes.string,
   age: PropTypes.number.isRequired,

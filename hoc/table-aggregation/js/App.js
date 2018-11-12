@@ -73,7 +73,7 @@ const MonthSort = (Component) => class extends React.Component {
         .map((item) => {
            item.month = months[parseInt(item.month)-1];
            return item
-       })
+        })
     }
 
     render () {
