@@ -2,7 +2,6 @@ class SubscribtionPage extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
         <article className="container m-5">
           <h1>Оформление подписки</h1>
           <p>Досточно только очень сильно захотеть — и подписка офорлмена!</p>
